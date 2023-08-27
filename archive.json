@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-24T00:35:10.331722+00:00",
+  "timestamp": "2023-08-27T00:38:02.231854+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -1208,13 +1208,13 @@
       "labels": [],
       "body": "Serial number and other minor changes",
       "createdAt": "2023-08-23T18:34:01Z",
-      "updatedAt": "2023-08-23T19:46:32Z",
+      "updatedAt": "2023-08-25T23:14:38Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
-      "baseRefOid": "15fa5fbe9d04b1920dc64957e5b2304e5d946e35",
+      "baseRefOid": "8d209e05999e826471ee2a5a6b22fab57a77cdab",
       "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "headRefName": "serial-number-and-other-changes",
-      "headRefOid": "ddbadf22f81577940bf16a14e718efd1edd4b3ba",
+      "headRefOid": "dc38790e908bb9bb6794b373dda4a4563bc62baf",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -1232,6 +1232,108 @@
           "body": "Thanks @siddikaparlak ",
           "createdAt": "2023-08-23T18:38:33Z",
           "updatedAt": "2023-08-23T18:38:33Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 40,
+      "id": "PR_kwDOJdqgvc5YpcKg",
+      "title": "Registry and accessory category updates",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/40",
+      "state": "OPEN",
+      "author": "bdetwiler",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-08-24T02:14:58Z",
+      "updatedAt": "2023-08-25T00:57:52Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "8d209e05999e826471ee2a5a6b22fab57a77cdab",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "registry-and-accessory-category-updates",
+      "headRefOid": "4e02c3b945a8f428568c4e1d385be7e0d0e7191b",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5e7gIf",
+          "commit": {
+            "abbreviatedOid": "4e02c3b"
+          },
+          "author": "bdetwiler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-08-24T02:16:06Z",
+          "updatedAt": "2023-08-24T02:16:06Z",
+          "comments": [
+            {
+              "originalPosition": 115,
+              "body": "leaving this blank for now until we have proper URLs to fill in",
+              "createdAt": "2023-08-24T02:16:06Z",
+              "updatedAt": "2023-08-24T02:16:06Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJdqgvc5fDH8i",
+          "commit": {
+            "abbreviatedOid": "4e02c3b"
+          },
+          "author": "siddikaparlak",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-08-25T00:57:52Z",
+          "updatedAt": "2023-08-25T00:57:52Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 41,
+      "id": "PR_kwDOJdqgvc5Y1cSq",
+      "title": "Sn and other changes",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/41",
+      "state": "MERGED",
+      "author": "siddikaparlak",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Trying serial number change on a new branch ",
+      "createdAt": "2023-08-25T23:55:12Z",
+      "updatedAt": "2023-08-26T00:28:19Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "8d209e05999e826471ee2a5a6b22fab57a77cdab",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "sn-and-other-changes",
+      "headRefOid": "fa05130203dcb9d64cf858b8f8fba570c39f3313",
+      "closedAt": "2023-08-26T00:28:18Z",
+      "mergedAt": "2023-08-26T00:28:18Z",
+      "mergedBy": "zaeddinger",
+      "mergeCommit": {
+        "oid": "7f0775b66cee411d5e31f65c751ef57bf73b05fb"
+      },
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5fKrba",
+          "commit": {
+            "abbreviatedOid": "fa05130"
+          },
+          "author": "zaeddinger",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-08-26T00:28:10Z",
+          "updatedAt": "2023-08-26T00:28:10Z",
           "comments": []
         }
       ]
