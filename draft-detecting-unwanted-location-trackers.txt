@@ -5,12 +5,12 @@
 Network Working Group                                         B. Ledvina
 Internet-Draft                                                     Apple
 Intended status: Informational                               Z. Eddinger
-Expires: 27 February 2024                                         Google
+Expires: 29 February 2024                                         Google
                                                              B. Detwiler
                                                                    Apple
                                                           S. P. Polatkan
                                                                   Google
-                                                          26 August 2023
+                                                          28 August 2023
 
 
                   Detecting Unwanted Location Trackers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 27 February 2024.
+   This Internet-Draft will expire on 29 February 2024.
 
 Copyright Notice
 
@@ -116,29 +116,30 @@ Table of Contents
        3.15.1.  Obfuscated owner information
        3.15.2.  Persistence
        3.15.3.  Availability for law enforcement
-   4.  Accessory Category Value
-   5.  Firmware Updates
-     5.1.  Backwards Compatibility
-       5.1.1.  Advertisement backwards compatibility
-   6.  Platform Support for Unwanted Tracking
-     6.1.  Owned Accessory Identification
-       6.1.1.  Implementation
-       6.1.2.  Platform Software Extension
-       6.1.3.  Network Access
-       6.1.4.  Removal
-   7.  Security Considerations
-     7.1.  Serial number look-up
-       7.1.1.  Design of encrypted serial number look-up
-   8.  Privacy Considerations
-     8.1.  Obfuscated owner information
-     8.2.  Serial number look-up
-     8.3.  Location-enabled payload
-       8.3.1.  Stable identifiers
-       8.3.2.  Proprietary company payload data
-   9.  IANA Considerations
-     9.1.  Manufacturer Protocol ID Registry
-     9.2.  Product Data Registry
-   10. Normative References
+   4.  Firmware Updates
+     4.1.  Backwards Compatibility
+       4.1.1.  Advertisement backwards compatibility
+   5.  Platform Support for Unwanted Tracking
+     5.1.  Owned Accessory Identification
+       5.1.1.  Implementation
+       5.1.2.  Platform Software Extension
+       5.1.3.  Network Access
+       5.1.4.  Removal
+   6.  Security Considerations
+     6.1.  Serial number look-up
+       6.1.1.  Design of encrypted serial number look-up
+   7.  Privacy Considerations
+     7.1.  Obfuscated owner information
+     7.2.  Serial number look-up
+     7.3.  Location-enabled payload
+       7.3.1.  Stable identifiers
+       7.3.2.  Proprietary company payload data
+   8.  IANA Considerations
+     8.1.  Manufacturer Protocol ID Registry
+       8.1.1.  Temporary Registry
+     8.2.  Product Data Registry
+       8.2.1.  Temporary Registry
+   9.  Normative References
    Authors' Addresses
 
 1.  Introduction
@@ -409,7 +410,7 @@ Table of Contents
    The owner MUST be able to predict the MAC address or another
    advertised identifier used by the accessory at any given time in
    order to suppress unwanted tracking alerts caused by a device’s owned
-   accessory.  See Owned Accessory Identification (Section 6.1) for
+   accessory.  See Owned Accessory Identification (Section 5.1) for
    additional details.
 
    The address SHALL rotate periodically (see Rotation policy
@@ -429,7 +430,7 @@ Table of Contents
 
    This construction allows accessories to define their own MAC address
    generation process while also providing a means to meet the
-   requirements for owned accessory identification (Section 6.1).
+   requirements for owned accessory identification (Section 5.1).
 
 3.5.1.  Rotation policy
 
@@ -457,7 +458,7 @@ Table of Contents
 
    The 1-byte Protocol ID SHALL be set based on a registered value for
    the manufacturer, as defined in Manufacturer Protocol ID Registry
-   (Section 9.1).
+   (Section 8.1).
 
 3.8.  Near-owner bit
 
@@ -503,8 +504,7 @@ Table of Contents
    The following accessory information MUST be persistent through the
    lifetime of the accessory: Product data (Section 3.11.1.1),
    Manufacturer name (Section 3.11.1.2), Model name (Section 3.11.1.3),
-   Accessory category (Section 3.11.1.4), and Accessory capabilities
-   (Section 3.11.1.5).
+   and Accessory capabilities (Section 3.11.1.4).
 
 3.11.1.  Opcodes
 
@@ -536,21 +536,13 @@ Table of Contents
    |                                   |      |  (Section  |    From    |
    |                                   |      | 3.11.1.3)  | Accessory  |
    +-----------------------------------+------+------------+------------+
-   |       Get_Accessory_Category      |0x309 |    None    | Write; To  |
-   |                                   |      |            | Accessory  |
-   +-----------------------------------+------+------------+------------+
-   |  Get_Accessory_Category_Response  |0x314 | Accessory  |Indications;|
-   |                                   |      |  Category  |    From    |
-   |                                   |      |  (Section  | Accessory  |
-   |                                   |      | 3.11.1.4)  |            |
-   +-----------------------------------+------+------------+------------+
    |     Get_Accessory_Capabilities    |0x30A |    None    | Write; To  |
    |                                   |      |            | Accessory  |
    +-----------------------------------+------+------------+------------+
    |Get_Accessory_Capabilities_Response|0x315 | Accessory  |Indications;|
    |                                   |      |Capabilities|    From    |
    |                                   |      |  (Section  | Accessory  |
-   |                                   |      | 3.11.1.5)  |            |
+   |                                   |      | 3.11.1.4)  |            |
    +-----------------------------------+------+------------+------------+
 
                    Table 4: Accessory Information Opcodes
@@ -560,7 +552,7 @@ Table of Contents
    The Product Data operand represents an 8-byte value that is intended
    to serve as a unique identifier for the accessory make and model.
    This value SHALL be available in a public registry as defined in
-   Section 9.2.
+   Section 8.2.
 
    The Product Data operand is 8 bytes, composed of two 8-character hex
    strings (lowercase zero padded), each of which is 4 bytes.
@@ -607,26 +599,10 @@ Table of Contents
 
                        Table 7: Model Name Operand
 
-3.11.1.4.  Accessory category
-
-   The Accessory Category operand describes the category the accessory
-   most closely resembles.
-
-    +===========+=======+==========+==================================+
-    |  Operand  |  Data |   Size   | Description                      |
-    |    name   |  type | (octets) |                                  |
-    +===========+=======+==========+==================================+
-    | Accessory | Uint8 |    8     | Byte 0: Uint8 value of Accessory |
-    |  Category |       |          | Category Value (Section 4)       |
-    |           |       |          | Byte 1-7: Reserved               |
-    +-----------+-------+----------+----------------------------------+
-
-                    Table 8: Accessory Category Operand
-
-3.11.1.5.  Accessory capabilities
+3.11.1.4.  Accessory capabilities
 
    The Accessory Capabilities operand enumerates the various
-   capabilities supported on the accessory as defined in Table 9.
+   capabilities supported on the accessory as defined in Table 8.
 
     +==============+========+==========+=============================+
     | Operand name |  Data  |   Size   | Description                 |
@@ -641,7 +617,7 @@ Table of Contents
     |              |        |          | number lookup by BLE        |
     +--------------+--------+----------+-----------------------------+
 
-                 Table 9: Accessory Capabilities Operand
+                 Table 8: Accessory Capabilities Operand
 
    For example, an accessory supporting play sound, motion detector UT,
    and serial number look-up over BT will have the value set as 1011 in
@@ -669,7 +645,7 @@ Table of Contents
 
    The details in this section apply to those accessories that include a
    motion detector.  Values of the variables referenced are specified in
-   Table 10.
+   Table 9.
 
 
    After T_(SEPARATED_UT_TIMEOUT) in separated state, the accessory MUST
@@ -731,7 +707,7 @@ Table of Contents
    |                                 | distribution |                  |
    +---------------------------------+--------------+------------------+
 
-                   Table 10: Motion Detector Time Values
+                    Table 9: Motion Detector Time Values
 
 3.12.3.  Sound maker
 
@@ -755,7 +731,7 @@ Table of Contents
    UUIDs as defined in Accessory Connections (Section 3.10).  The non-
    owner control point enables a non-owner device to locate the
    accessory by playing a sound.  The opcodes for the control point are
-   defined in Table 11.
+   defined in Table 10.
 
    +============================+========+=============+==============+
    |           Opcode           | Opcode |   Operands  |     GATT     |
@@ -786,7 +762,7 @@ Table of Contents
    |                            |        |  3.12.4.2)  |              |
    +----------------------------+--------+-------------+--------------+
 
-                Table 11: Non-Owner Control Point Opcodes
+                Table 10: Non-Owner Control Point Opcodes
 
    This control point SHALL be available to the platform only when the
    accessory is in separated state.  In all other states, the accessory
@@ -847,7 +823,7 @@ Table of Contents
    |                |        |          | 0xFFFF Invalid_command       |
    +----------------+--------+----------+------------------------------+
 
-                    Table 12: Command Response Operands
+                    Table 11: Command Response Operands
 
 3.12.4.2.  Serial Number Payload
 
@@ -868,13 +844,13 @@ Table of Contents
     |         |           |   accessory   | when in associated state. |
     +---------+-----------+---------------+---------------------------+
 
-               Table 13: Serial Number Payload Over Bluetooth
+               Table 12: Serial Number Payload Over Bluetooth
 
    If the accessory is not in serial number read state, it MUST send
    Command_Response (Section 3.12.4.1.1) with the Invalid_command as the
    ResponseStatus.  Further considerations for how these operands should
    be implemented are discussed in Design of encrypted serial number
-   look-up (Section 7.1.1).
+   look-up (Section 6.1.1).
 
 3.12.5.  Alternate finding hardware
 
@@ -883,7 +859,7 @@ Table of Contents
 
 3.12.6.  Recommended Finding Options
 
-   Table 14 lists two RECOMMENDED options on the set of technology in an
+   Table 13 lists two RECOMMENDED options on the set of technology in an
    accessory to make it findable.
 
                    +=============+==========+==========+
@@ -898,7 +874,7 @@ Table of Contents
                    | Lights      |          |    X     |
                    +-------------+----------+----------+
 
-                        Table 14: Accessory Finding
+                        Table 13: Accessory Finding
                               Hardware Options
 
 3.12.7.  Future hardware
@@ -925,7 +901,7 @@ Table of Contents
 
    A registry which maps Product data (Section 3.11.1.1) to an
    affiliated URL supporting retrieval of disablement instructions SHALL
-   be available for platforms to reference, as defined in Section 9.2.
+   be available for platforms to reference, as defined in Section 8.2.
    This URL must return a response which can be rendered by an HTML
    view.
 
@@ -965,7 +941,7 @@ Table of Contents
    A registry which maps Product Data (Section 3.11.1.1) to an
    affiliated URL that will return a text description and visual
    depiction of how to enable identifier look-up over Bluetooth LE SHALL
-   be available for platforms to reference, as defined in Section 9.2.
+   be available for platforms to reference, as defined in Section 8.2.
    This URL MUST return a response which can be rendered by an HTML
    view.
 
@@ -977,15 +953,15 @@ Table of Contents
    A registry which maps Product Data (Section 3.11.1.1) to an
    affiliated URL which will decrypt the identifier payload and return
    the identifier value SHALL be available for platforms to reference,
-   as defined in Section 9.2.  This URL MUST return a response which can
+   as defined in Section 8.2.  This URL MUST return a response which can
    be rendered by an HTML view.  The arguments sent to this URL SHALL
-   match those that are defined in Table 13.  Security considerations
-   are discussed in Section 7.1.
+   match those that are defined in Table 12.  Security considerations
+   are discussed in Section 6.1.
 
 3.14.5.  Identifier over NFC
 
    For those accessories that support identifier retrieval over NFC, a
-   paired accessory SHALL advertise a URL with parameters in Table 15.
+   paired accessory SHALL advertise a URL with parameters in Table 14.
    This URL SHALL decrypt the identifier payload and return the
    identifier of the accessory in a form that can be rendered in the
    platform's HTML view.
@@ -1000,7 +976,7 @@ Table of Contents
     |         |           |   accessory   |    in associated state.   |
     +---------+-----------+---------------+---------------------------+
 
-            Table 15: Identifier Number Lookup Payload Over NFC
+            Table 14: Identifier Number Lookup Payload Over NFC
 
 3.15.  Owner registry
 
@@ -1037,115 +1013,18 @@ Table of Contents
    The owner registry SHALL be made available to law enforcement upon a
    valid law enforcement request.
 
-4.  Accessory Category Value
-
-   Accessory manufacturer’s MUST pick an accessory category value that
-   closest resembles their physical product.  If none of the accessory
-   categories provided in Table 16 match the physical product, Other
-   MUST be chosen.
-
-               +============================+=============+
-               | Accessory Category Name    |    Value    |
-               +============================+=============+
-               | Finder                     |      1      |
-               +----------------------------+-------------+
-               | Other                      |     128     |
-               +----------------------------+-------------+
-               | Luggage                    |     129     |
-               +----------------------------+-------------+
-               | Backpack                   |     130     |
-               +----------------------------+-------------+
-               | Jacket                     |     131     |
-               +----------------------------+-------------+
-               | Coat                       |     132     |
-               +----------------------------+-------------+
-               | Shoes                      |     133     |
-               +----------------------------+-------------+
-               | Bike                       |     134     |
-               +----------------------------+-------------+
-               | Scooter                    |     135     |
-               +----------------------------+-------------+
-               | Stroller                   |     136     |
-               +----------------------------+-------------+
-               | Wheelchair                 |     137     |
-               +----------------------------+-------------+
-               | Boat                       |     138     |
-               +----------------------------+-------------+
-               | Helmet                     |     139     |
-               +----------------------------+-------------+
-               | Skateboard                 |     140     |
-               +----------------------------+-------------+
-               | Skis                       |     141     |
-               +----------------------------+-------------+
-               | Snowboard                  |     142     |
-               +----------------------------+-------------+
-               | Surfboard                  |     143     |
-               +----------------------------+-------------+
-               | Camera                     |     144     |
-               +----------------------------+-------------+
-               | Laptop                     |     145     |
-               +----------------------------+-------------+
-               | Watch                      |     146     |
-               +----------------------------+-------------+
-               | Flash drive                |     147     |
-               +----------------------------+-------------+
-               | Drone                      |     148     |
-               +----------------------------+-------------+
-               | Headphones                 |     149     |
-               +----------------------------+-------------+
-               | Earphones                  |     150     |
-               +----------------------------+-------------+
-               | Inhaler                    |     151     |
-               +----------------------------+-------------+
-               | Sunglasses                 |     152     |
-               +----------------------------+-------------+
-               | Handbag                    |     153     |
-               +----------------------------+-------------+
-               | Wallet                     |     154     |
-               +----------------------------+-------------+
-               | Umbrella                   |     155     |
-               +----------------------------+-------------+
-               | Water bottle               |     156     |
-               +----------------------------+-------------+
-               | Tools or tool box          |     157     |
-               +----------------------------+-------------+
-               | Keys                       |     158     |
-               +----------------------------+-------------+
-               | Smart case                 |     159     |
-               +----------------------------+-------------+
-               | Remote                     |     160     |
-               +----------------------------+-------------+
-               | Hat                        |     161     |
-               +----------------------------+-------------+
-               | Motorbike                  |     162     |
-               +----------------------------+-------------+
-               | Consumer electronic device |     163     |
-               +----------------------------+-------------+
-               | Apparel                    |     164     |
-               +----------------------------+-------------+
-               | Transportation device      |     165     |
-               +----------------------------+-------------+
-               | Sports equipment           |     166     |
-               +----------------------------+-------------+
-               | Personal item              |     167     |
-               +----------------------------+-------------+
-               | Reserved for future use    | 2-127, 167+ |
-               +----------------------------+-------------+
-
-                   Table 16: Accessory Category Values
-
-5.  Firmware Updates
+4.  Firmware Updates
 
    The accessory SHOULD have firmware that is updatable by the owner.
 
-5.1.  Backwards Compatibility
+4.1.  Backwards Compatibility
 
    ### Existing trackers
 
    Existing trackers should be updated on a best-effort basis to
    implement the protocols and practices outlined above.
 
-5.1.1.  Advertisement backwards compatibility
+4.1.1.  Advertisement backwards compatibility
 
    The manufacturer MAY continue to use the company’s existing service
    UUID as registered in the Bluetooth SIG until October 1, 2024, after
@@ -1164,13 +1043,13 @@ Table of Contents
    Companies who have registered their protocol IDs will appear in a
    table below.
 
-6.  Platform Support for Unwanted Tracking
+5.  Platform Support for Unwanted Tracking
 
    This section details the requirements and recommendations for
    platforms to be compatible with the accessory protocol behavior
    described in the document.
 
-6.1.  Owned Accessory Identification
+5.1.  Owned Accessory Identification
 
    Any platform that supports unwanted tracking SHOULD also provide the
    capability to suppress unwanted tracking alerts caused by an
@@ -1181,13 +1060,13 @@ Table of Contents
    this alert for the owner of the accessory, then the platform SHOULD
    explain to the user how those capabilities can be acquired.
 
-6.1.1.  Implementation
+5.1.1.  Implementation
 
    Unwanted tracking SHOULD recognize an accessory associated to that
    owner device by matching the MAC address advertised, as defined in
    Table 1, against the one(s) expected during that time.
 
-6.1.2.  Platform Software Extension
+5.1.2.  Platform Software Extension
 
    Platforms SHOULD implement the owned accessory identification
    capability as a software extension to its unwanted tracking
@@ -1201,20 +1080,20 @@ Table of Contents
    Table 1, SHALL be used to associate an accessory detected with the
    manufacturer's software extension.
 
-6.1.3.  Network Access
+5.1.3.  Network Access
 
    Network access MUST NOT be required in the moment that the platform
    performs owned accessory recognition.
 
-6.1.4.  Removal
+5.1.4.  Removal
 
    The platform MUST delete any local identifying information associated
    with an accessory if the manufacturer's software is removed or if the
    platform unassociates from the accessory.
 
-7.  Security Considerations
+6.  Security Considerations
 
-7.1.  Serial number look-up
+6.1.  Serial number look-up
 
    If a serial number is available, serial number look-up is required to
    display important information to users who encounter an unwanted
@@ -1249,7 +1128,7 @@ Table of Contents
    the accessory, while the authentication prevents an adversary from
    impersonating any accessory from a single payload.
 
-7.1.1.  Design of encrypted serial number look-up
+6.1.1.  Design of encrypted serial number look-up
 
    One way to design this encryption is for the accessory to contain a
    public key for the accessory network server.  For every request
@@ -1266,9 +1145,9 @@ Table of Contents
    connect to for the decryption, and for the service to know which
    decryption key and protocol version to use.
 
-8.  Privacy Considerations
+7.  Privacy Considerations
 
-8.1.  Obfuscated owner information
+7.1.  Obfuscated owner information
 
    In many circumstances when unwanted tracking occurs, the individual
    being tracked knows the owner of the location-tracker.  By allowing
@@ -1279,7 +1158,7 @@ Table of Contents
    arbitrary situations where they have separated from those
    accessories.
 
-8.2.  Serial number look-up
+7.2.  Serial number look-up
 
    A serial number both physically on the device, as well as retrievable
    over NFC or Bluetooth LE, can aid recourse actions in the case of
@@ -1292,9 +1171,9 @@ Table of Contents
    to be in separated state as well as a physical action be performed to
    enable the serial number retrieval.
 
-8.3.  Location-enabled payload
+7.3.  Location-enabled payload
 
-8.3.1.  Stable identifiers
+7.3.1.  Stable identifiers
 
    Rotating the mac address of the location-enabled payload, as
    described in Section 3.5, balances the risk of nefarious stable
@@ -1305,20 +1184,20 @@ Table of Contents
    the ability to piece together long stretches of longitudinal data on
    the whereabouts of an accessory.
 
-8.3.2.  Proprietary company payload data
+7.3.2.  Proprietary company payload data
 
    Accessory manufacturers SHOULD evaluate the contents of the
    proprietary company payload data in Table 1 to ensure it does not
    introduce additional privacy risk through the broadcast of stable
    identifiers or unencrypted sensitive data.
 
-9.  IANA Considerations
+8.  IANA Considerations
 
    IANA will create a new registry group called "Unwanted Tracking
    Protocols (UTP)".  This group includes the "Manufacturer Protocol ID"
    and "Product Data" registries described below.
 
-9.1.  Manufacturer Protocol ID Registry
+8.1.  Manufacturer Protocol ID Registry
 
    New entries are assigned only for values that have received Expert
    Review, per Section 4.5 of [RFC8126].
@@ -1331,7 +1210,25 @@ Table of Contents
    *  Protocol ID: a 1-byte value specifying the Protocol ID associated
       with the Manufacturer Name
 
-9.2.  Product Data Registry
+8.1.1.  Temporary Registry
+
+   Until this an IANA registry is available, the values in this registry
+   are listed in Table 15.
+
+                      +=============+==============+
+                      | Protocol ID | Manufacturer |
+                      +=============+==============+
+                      |     0x00    |   Reserved   |
+                      +-------------+--------------+
+                      |             |    Apple     |
+                      +-------------+--------------+
+                      |             |    Google    |
+                      +-------------+--------------+
+
+                          Table 15: Manufacturer
+                                 Registry
+
+8.2.  Product Data Registry
 
    New entries are assigned only for values that have received Expert
    Review, per Section 4.5 of [RFC8126].
@@ -1356,7 +1253,20 @@ Table of Contents
    *  Serial Number Look-up: a string representing the URL where the
       serial number and obfuscated owner information can be retrieved.
 
-10.  Normative References
+8.2.1.  Temporary Registry
+
+   Until this an IANA registry is available, the values in this registry
+   are listed in Table 16.
+
+     +==============+==================+============================+
+     | Product Data |   Disablement    |  Identifier Look-up Over   |
+     |              | Instructions URL | Bluetooth Instructions URL |
+     +==============+==================+============================+
+     +--------------+------------------+----------------------------+
+
+                     Table 16: Product Data Registry
+
+9.  Normative References
 
    [BTCore5.4]
               "Bluetooth Core Specification v5.4", 31 January 2023,
