@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-29T00:36:07.139493+00:00",
+  "timestamp": "2023-08-31T00:36:26.288583+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -1345,24 +1345,26 @@
       "id": "PR_kwDOJdqgvc5Y8xcL",
       "title": "Unify the BT and NFC identifier  lookup logic to both return URLs",
       "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/42",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "bdetwiler",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "",
       "createdAt": "2023-08-28T15:55:52Z",
-      "updatedAt": "2023-08-28T20:25:43Z",
+      "updatedAt": "2023-08-29T01:13:34Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "0fff31bd8cb9d88dbcbe8a0d2c90fabc09f81316",
       "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "headRefName": "identifier-over-bt-update",
-      "headRefOid": "69ac2f85d1ea489f87f8a4b9c5c6a6c8949d8361",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "cf8cc7985dfc2fe7c6028f7dcf339545639815a6",
+      "closedAt": "2023-08-29T01:13:34Z",
+      "mergedAt": "2023-08-29T01:13:34Z",
+      "mergedBy": "bdetwiler",
+      "mergeCommit": {
+        "oid": "5b3a2cfa3a7f5e5329558d5ee1f823ca3782e28c"
+      },
       "comments": [],
       "reviews": [
         {
@@ -1388,6 +1390,46 @@
               "body": "typo: sn-lookup-secu?rity --> sn-lookup-security",
               "createdAt": "2023-08-28T20:24:27Z",
               "updatedAt": "2023-08-28T20:25:43Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJdqgvc5fU7yZ",
+          "commit": {
+            "abbreviatedOid": "69ac2f8"
+          },
+          "author": "bdetwiler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-08-29T01:12:12Z",
+          "updatedAt": "2023-08-29T01:12:13Z",
+          "comments": [
+            {
+              "originalPosition": 13,
+              "body": "thanks, fixed.",
+              "createdAt": "2023-08-29T01:12:13Z",
+              "updatedAt": "2023-08-29T01:12:13Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJdqgvc5fU71L",
+          "commit": {
+            "abbreviatedOid": "69ac2f8"
+          },
+          "author": "bdetwiler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-08-29T01:12:31Z",
+          "updatedAt": "2023-08-29T01:12:31Z",
+          "comments": [
+            {
+              "originalPosition": 28,
+              "body": "yes, good catch. fixed. thank you.",
+              "createdAt": "2023-08-29T01:12:31Z",
+              "updatedAt": "2023-08-29T01:12:31Z"
             }
           ]
         }
