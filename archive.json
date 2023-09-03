@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-08-31T00:36:26.288583+00:00",
+  "timestamp": "2023-09-03T00:38:04.542812+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -385,7 +385,7 @@
       "labels": [],
       "body": "From Eric Rescorla <[ekr@rtfm.com](mailto:ekr@rtfm.com)>, Sun, 07 May 2023 20:06 UTC\r\nvia [unwanted-trackers-request@ietf.org](mailto:unwanted-trackers-request@ietf.org)\r\n\r\n\r\nThe non-owner controls specified in S 3.12.4 should probably only be\r\nenabled\r\nin separated mode. It would obviously be quite annoying if I could cause any\r\ntag near me to start emitting noise.",
       "createdAt": "2023-05-10T18:37:44Z",
-      "updatedAt": "2023-05-10T23:12:43Z",
+      "updatedAt": "2023-09-01T13:20:36Z",
       "closedAt": null,
       "comments": [
         {
@@ -394,6 +394,13 @@
           "body": "Agree that non-owner controls shall only be available when in separated mode.\r\n\r\nBelow Table 11 in 3.12.4 there is this statement:\r\n\r\n\u201cThis control point SHALL be available to the platform only when the accessory is in separated state. In all other states, ...\"\r\n \r\nI propose moving this paragraph above Table 11 so it's not as separated from the rest.",
           "createdAt": "2023-05-10T23:12:43Z",
           "updatedAt": "2023-05-10T23:12:43Z"
+        },
+        {
+          "author": "mrlnc",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Hi all, thanks for the clarification here - I'm following the UT discussion and appreciate the public process. I was trying to find out if playing sounds should be possible when the accessory is in *near-owner* state, and I found Section 3.12.3 confusing.\r\n\r\nSection 3.12.3 \"Sound Maker\" currently reads:\r\n\r\n> The accessory MUST include a sound maker (for example, a speaker) to play sound ***when in separated state***, either periodically or when motion is detected.\r\n> It MUST ***also*** play sound when a non-owner tries to locate the accessory by initiating a play sound command from a non-owner device when the accessory is in range and connectable through Bluetooth LE.\r\n\r\nThis section initially gave me the impression that playing sounds is always possible when in-range (both near-owner and separated state), and it seemed to contradict the statement in 3.12.4. Perhaps the Sound Maker section could emphasise that non-owner initiated sounds require the separated state (\"when the accessory is in range and ~connectable through Bluetooth LE~ *in separated mode.*\")\r\n\r\nThis issue seems to be the right place to share my confusion :-)",
+          "createdAt": "2023-09-01T13:20:36Z",
+          "updatedAt": "2023-09-01T13:20:36Z"
         }
       ]
     },
@@ -1434,6 +1441,80 @@
           ]
         }
       ]
+    },
+    {
+      "number": 43,
+      "id": "PR_kwDOJdqgvc5ZSK0D",
+      "title": "Near-owner bit is least significant",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/43",
+      "state": "OPEN",
+      "author": "zaeddinger",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Adding changes to explicitly state that near-owner bit is the least significant bit",
+      "createdAt": "2023-08-31T22:05:25Z",
+      "updatedAt": "2023-08-31T23:02:15Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "5b3a2cfa3a7f5e5329558d5ee1f823ca3782e28c",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "zaeddinger-patch-near-owner",
+      "headRefOid": "eed562c98f5700db229360ec676d95c3e55fd684",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5ft9mt",
+          "commit": {
+            "abbreviatedOid": "eed562c"
+          },
+          "author": "zaeddinger",
+          "authorAssociation": "COLLABORATOR",
+          "state": "COMMENTED",
+          "body": "added #identifier-over-nfc",
+          "createdAt": "2023-08-31T23:02:15Z",
+          "updatedAt": "2023-08-31T23:02:15Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 44,
+      "id": "PR_kwDOJdqgvc5ZSWgm",
+      "title": "Updating serial number references",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/44",
+      "state": "OPEN",
+      "author": "zaeddinger",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Updated sections from serial number --> identifier to generalize language.",
+      "createdAt": "2023-08-31T23:16:49Z",
+      "updatedAt": "2023-08-31T23:52:24Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "5b3a2cfa3a7f5e5329558d5ee1f823ca3782e28c",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "zae-identifiers-1",
+      "headRefOid": "1e0143f6182942c7e347fac80b73510a87f1809c",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "zaeddinger",
+          "authorAssociation": "COLLABORATOR",
+          "body": "this should pass all checks once 43 merges",
+          "createdAt": "2023-08-31T23:51:48Z",
+          "updatedAt": "2023-08-31T23:51:48Z"
+        }
+      ],
+      "reviews": []
     }
   ]
 }
