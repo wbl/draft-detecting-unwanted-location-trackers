@@ -5,12 +5,12 @@
 Network Working Group                                         B. Ledvina
 Internet-Draft                                                     Apple
 Intended status: Informational                               Z. Eddinger
-Expires: 29 February 2024                                         Google
+Expires: 10 March 2024                                            Google
                                                              B. Detwiler
                                                                    Apple
                                                           S. P. Polatkan
                                                                   Google
-                                                          28 August 2023
+                                                        7 September 2023
 
 
                   Detecting Unwanted Location Trackers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 29 February 2024.
+   This Internet-Draft will expire on 10 March 2024.
 
 Copyright Notice
 
@@ -111,7 +111,7 @@ Table of Contents
        3.14.2.  Identifier retrieval capability
        3.14.3.  Identifier retrieval over Bluetooth LE
        3.14.4.  Identifier retrieval from a server
-       3.14.5.  Identifier over NFC
+       3.14.5.  Identifer over NFC
      3.15. Owner registry
        3.15.1.  Obfuscated owner information
        3.15.2.  Persistence
@@ -834,17 +834,18 @@ Table of Contents
    accessory is in this mode, it MUST respond with
    Get_Serial_Number_Response opcode and Serial Number Payload operand.
 
-    +=========+===========+===============+===========================+
-    | Operand | Data type | Size (octets) |        Description        |
-    +=========+===========+===============+===========================+
-    |    p    |   bytes   |   defined by  | Non-identifiable metadata |
-    |         |           |   accessory   |                           |
-    +---------+-----------+---------------+---------------------------+
-    |    e    |   bytes   |   defined by  |  Encrypted serial number  |
-    |         |           |   accessory   | when in associated state. |
-    +---------+-----------+---------------+---------------------------+
+   +============+=======+============+================================+
+   |  Operand   |  Data |    Size    |          Description           |
+   |            |  type |  (octets)  |                                |
+   +============+=======+============+================================+
+   |   Serial   | UTF-8 | defined by | String for URL from which the  |
+   | Number URL |       | accessory  | serial number can be retrieved |
+   +------------+-------+------------+--------------------------------+
 
-               Table 12: Serial Number Payload Over Bluetooth
+              Table 12: Serial Number Payload Over Bluetooth
+
+   The encrypted serial number SHALL be an argument passed to this URL
+   and it is REQUIRED that any metadata passed be non-identifiable.
 
    If the accessory is not in serial number read state, it MUST send
    Command_Response (Section 3.12.4.1.1) with the Invalid_command as the
@@ -958,25 +959,16 @@ Table of Contents
    match those that are defined in Table 12.  Security considerations
    are discussed in Section 6.1.
 
-3.14.5.  Identifier over NFC
+3.14.5.  Identifer over NFC
 
-   For those accessories that support identifier retrieval over NFC, a
-   paired accessory SHALL advertise a URL with parameters in Table 14.
-   This URL SHALL decrypt the identifier payload and return the
-   identifier of the accessory in a form that can be rendered in the
-   platform's HTML view.
+   For those accessories that support identifier retrieval over NFC, an
+   associated accessory SHALL advertise a URL which SHALL decrypt the
+   identifier payload and return the identifier of the accessory in a
+   form that can be rendered in the platform's HTML view.
 
-    +=========+===========+===============+===========================+
-    | Operand | Data type | Size (octets) |        Description        |
-    +=========+===========+===============+===========================+
-    |    p    |   bytes   |   defined by  | Non-identifiable metadata |
-    |         |           |   accessory   |                           |
-    +---------+-----------+---------------+---------------------------+
-    |    e    |   bytes   |   defined by  | Encrypted identifier when |
-    |         |           |   accessory   |    in associated state.   |
-    +---------+-----------+---------------+---------------------------+
-
-            Table 14: Identifier Number Lookup Payload Over NFC
+   The encrypted serial number when in associated state SHALL be an
+   argument passed to this URL and it is REQUIRED that any metadata
+   passed be non-identifiable.
 
 3.15.  Owner registry
 
@@ -1213,7 +1205,7 @@ Table of Contents
 8.1.1.  Temporary Registry
 
    Until this an IANA registry is available, the values in this registry
-   are listed in Table 15.
+   are listed in Table 14.
 
                       +=============+==============+
                       | Protocol ID | Manufacturer |
@@ -1225,7 +1217,7 @@ Table of Contents
                       |             |    Google    |
                       +-------------+--------------+
 
-                          Table 15: Manufacturer
+                          Table 14: Manufacturer
                                  Registry
 
 8.2.  Product Data Registry
@@ -1256,7 +1248,7 @@ Table of Contents
 8.2.1.  Temporary Registry
 
    Until this an IANA registry is available, the values in this registry
-   are listed in Table 16.
+   are listed in Table 15.
 
      +==============+==================+============================+
      | Product Data |   Disablement    |  Identifier Look-up Over   |
@@ -1264,7 +1256,7 @@ Table of Contents
      +==============+==================+============================+
      +--------------+------------------+----------------------------+
 
-                     Table 16: Product Data Registry
+                     Table 15: Product Data Registry
 
 9.  Normative References
 
