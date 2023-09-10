@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-03T00:38:04.542812+00:00",
+  "timestamp": "2023-09-10T00:38:37.305606+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -1494,7 +1494,7 @@
       "labels": [],
       "body": "Updated sections from serial number --> identifier to generalize language.",
       "createdAt": "2023-08-31T23:16:49Z",
-      "updatedAt": "2023-08-31T23:52:24Z",
+      "updatedAt": "2023-09-07T18:49:20Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "5b3a2cfa3a7f5e5329558d5ee1f823ca3782e28c",
@@ -1514,7 +1514,84 @@
           "updatedAt": "2023-08-31T23:51:48Z"
         }
       ],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5gUvWe",
+          "commit": {
+            "abbreviatedOid": "1e0143f"
+          },
+          "author": "bdetwiler",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-07T18:49:20Z",
+          "updatedAt": "2023-09-07T18:49:20Z",
+          "comments": []
+        }
+      ]
+    },
+    {
+      "number": 45,
+      "id": "PR_kwDOJdqgvc5Zzwii",
+      "title": "Fix internal reference so that this builds.",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/45",
+      "state": "MERGED",
+      "author": "ekr",
+      "authorAssociation": "CONTRIBUTOR",
+      "assignees": [],
+      "labels": [],
+      "body": "The document does not build correctly without this change.",
+      "createdAt": "2023-09-07T18:25:39Z",
+      "updatedAt": "2023-09-07T18:50:14Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "5b3a2cfa3a7f5e5329558d5ee1f823ca3782e28c",
+      "headRepository": "ekr/draft-detecting-unwanted-location-trackers",
+      "headRefName": "fix-internal-reference",
+      "headRefOid": "fb52407a4ab123363d23c4fe172697a2bb8523e4",
+      "closedAt": "2023-09-07T18:36:03Z",
+      "mergedAt": "2023-09-07T18:36:03Z",
+      "mergedBy": "zaeddinger",
+      "mergeCommit": {
+        "oid": "164903fc8b7de9945739ce750f978007efbbf843"
+      },
+      "comments": [
+        {
+          "author": "zaeddinger",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Good catch - thank you!",
+          "createdAt": "2023-09-07T18:35:31Z",
+          "updatedAt": "2023-09-07T18:35:31Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5gUrAk",
+          "commit": {
+            "abbreviatedOid": "fb52407"
+          },
+          "author": "zaeddinger",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-07T18:35:57Z",
+          "updatedAt": "2023-09-07T18:35:57Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJdqgvc5gUvof",
+          "commit": {
+            "abbreviatedOid": "fb52407"
+          },
+          "author": "bdetwiler",
+          "authorAssociation": "OWNER",
+          "state": "COMMENTED",
+          "body": "thanks for the fix!",
+          "createdAt": "2023-09-07T18:50:14Z",
+          "updatedAt": "2023-09-07T18:50:14Z",
+          "comments": []
+        }
+      ]
     }
   ]
 }
