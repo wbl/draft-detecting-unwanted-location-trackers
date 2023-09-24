@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-21T00:36:30.145954+00:00",
+  "timestamp": "2023-09-24T00:38:55.430367+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -832,9 +832,17 @@
       "labels": [],
       "body": "Expand definition of charter to include other system aspects, not just the behaviors of separated BLE trackers, particularly methods that tracking networks could deploy.",
       "createdAt": "2023-09-15T18:08:51Z",
-      "updatedAt": "2023-09-15T18:08:51Z",
+      "updatedAt": "2023-09-22T20:03:32Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I'm not quite sure what this issue is about. However, I think what's relevant is whether the specification defines a complete system. Specifically:\r\n\r\n1. Does it describe a system which is sufficiently complete to analyze the privacy properties (rather than having a privacy-critical opaque blob)\r\n2. Is it sufficient to create an interoperable system so that a third party could make a tracker which worked with an existing network.\r\n\r\nMy view is that (1) is imperative and (2) is very desirable.",
+          "createdAt": "2023-09-22T20:03:32Z",
+          "updatedAt": "2023-09-22T20:03:32Z"
+        }
+      ]
     },
     {
       "number": 47,
@@ -960,7 +968,7 @@
       "labels": [],
       "body": "Tracking network is the source of the problem as stated by several people in BoF meeting. Request to expand scope of charter to include this",
       "createdAt": "2023-09-20T00:41:05Z",
-      "updatedAt": "2023-09-20T00:42:20Z",
+      "updatedAt": "2023-09-22T20:01:45Z",
       "closedAt": null,
       "comments": [
         {
@@ -969,6 +977,13 @@
           "body": "May be able to dupe this to issue #46 ",
           "createdAt": "2023-09-20T00:42:20Z",
           "updatedAt": "2023-09-20T00:42:20Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "This is related to #47, because the point is that the existence of the tracking network is what creates the risk of misuse of the trackers, and especially of nonconformance.",
+          "createdAt": "2023-09-22T20:01:45Z",
+          "updatedAt": "2023-09-22T20:01:45Z"
         }
       ]
     },
@@ -1048,9 +1063,17 @@
       "labels": [],
       "body": "Privacy goals of charter are underspecified. Watson Ladd stated this.",
       "createdAt": "2023-09-20T00:58:50Z",
-      "updatedAt": "2023-09-20T00:58:50Z",
+      "updatedAt": "2023-09-21T20:32:28Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "wbl",
+          "authorAssociation": "NONE",
+          "body": "This seems very similar to Issue #50 ",
+          "createdAt": "2023-09-21T20:32:28Z",
+          "updatedAt": "2023-09-21T20:32:28Z"
+        }
+      ]
     },
     {
       "number": 60,
@@ -1112,9 +1135,17 @@
       "labels": [],
       "body": "some parties proposed attestation should be in scope and others proposed it should be out of scope for charter.",
       "createdAt": "2023-09-20T01:07:26Z",
-      "updatedAt": "2023-09-20T01:07:26Z",
+      "updatedAt": "2023-09-22T19:58:25Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "I don't think this is the right question. Attestation is a technical mechanism. The question to ask is whether fake trackers are part of the threat model.",
+          "createdAt": "2023-09-22T19:58:25Z",
+          "updatedAt": "2023-09-22T19:58:25Z"
+        }
+      ]
     },
     {
       "number": 64,
@@ -1144,9 +1175,17 @@
       "labels": [],
       "body": "Jonathan Hoyland mentioned he wants to include a signature in the charter to authenticate",
       "createdAt": "2023-09-20T01:13:51Z",
-      "updatedAt": "2023-09-20T01:13:51Z",
+      "updatedAt": "2023-09-22T19:59:46Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "This also seems like a technical mechanism that might or might not be useful. The right question is if we are trying to authenticate the tracker.",
+          "createdAt": "2023-09-22T19:59:46Z",
+          "updatedAt": "2023-09-22T19:59:46Z"
+        }
+      ]
     },
     {
       "number": 66,
