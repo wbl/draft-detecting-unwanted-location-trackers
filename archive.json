@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-24T00:38:55.430367+00:00",
+  "timestamp": "2023-09-26T00:37:11.497363+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -752,9 +752,17 @@
       "labels": [],
       "body": "Currently, there is no endpoint validation for FindMy, so the FindMy protocol provides transit for ALL traffic, even unwanted or malicious traffic. \r\n\r\nThis means is that anyone can use FindMy to place a tracker on someone (that is not an AirTag) **_so it will NOT be detected by Apple's anti-tracking framework._** \r\n\r\nThere needs to be some kind of endpoint validation to ensure that only legitimate Apple devices (or trackers that have been developed by official Apple developers using the FindMy Developer Program) are enrolled.   \r\n\r\n1) **POC for registering non-Apple endpoints to the FindMy network to be geolocated by FindMy protocol** https://github.com/seemoo-lab/openhaystack\r\n\r\n\r\n2) **POC for circumventing anti-tracking framework that allows malicious actors to surreptitiously track people** \r\nhttps://samteplov.com/uploads/who-tracks-the-trackers/trackers.pdf\r\n\r\n3) **Potential Endpoint registration approach that also preserves user privacy** https://petsymposium.org/popets/2023/popets-2023-0006.pdf\r\n",
       "createdAt": "2023-06-30T20:27:45Z",
-      "updatedAt": "2023-06-30T20:27:45Z",
+      "updatedAt": "2023-09-25T00:14:18Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "cfossace",
+          "authorAssociation": "NONE",
+          "body": "More POCs https://github.com/furiousMAC/antitrackingtags",
+          "createdAt": "2023-09-25T00:14:18Z",
+          "updatedAt": "2023-09-25T00:14:18Z"
+        }
+      ]
     },
     {
       "number": 33,
@@ -832,7 +840,7 @@
       "labels": [],
       "body": "Expand definition of charter to include other system aspects, not just the behaviors of separated BLE trackers, particularly methods that tracking networks could deploy.",
       "createdAt": "2023-09-15T18:08:51Z",
-      "updatedAt": "2023-09-22T20:03:32Z",
+      "updatedAt": "2023-09-25T23:33:52Z",
       "closedAt": null,
       "comments": [
         {
@@ -841,6 +849,13 @@
           "body": "I'm not quite sure what this issue is about. However, I think what's relevant is whether the specification defines a complete system. Specifically:\r\n\r\n1. Does it describe a system which is sufficiently complete to analyze the privacy properties (rather than having a privacy-critical opaque blob)\r\n2. Is it sufficient to create an interoperable system so that a third party could make a tracker which worked with an existing network.\r\n\r\nMy view is that (1) is imperative and (2) is very desirable.",
           "createdAt": "2023-09-22T20:03:32Z",
           "updatedAt": "2023-09-22T20:03:32Z"
+        },
+        {
+          "author": "dkg",
+          "authorAssociation": "NONE",
+          "body": "There is also the problem that the current system depends on a large number of users operating \"finder\" nodes, in many cases without any awareness that they are doing so, or what the implications are.  If these \"finder\" operators are critically important for the utility of the trackers, as well as enablers for unwanted tracking, there is an open question about what their incentives and liabilities are for participating in the overall protocol.\r\n\r\nFor example, a finder operator might be unwilling to operate their finder node unless they could ensure that they were only using them for conformant trackers, which gets into questions like #47 and #63.  If the protocol cannot offer the finder operator that level of nuance, some operators may prefer to not participate in the network at all.",
+          "createdAt": "2023-09-25T23:33:52Z",
+          "updatedAt": "2023-09-25T23:33:52Z"
         }
       ]
     },
@@ -920,9 +935,17 @@
       "labels": [],
       "body": "Not having access to a phone is a concern. Brought up by Ted Hardie.",
       "createdAt": "2023-09-20T00:27:27Z",
-      "updatedAt": "2023-09-20T00:27:27Z",
+      "updatedAt": "2023-09-25T21:17:36Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "dkg",
+          "authorAssociation": "NONE",
+          "body": "no access to a phone is a concern in several different directions:\r\n\r\n- A modern, up-to-date, well-maintained mobile device can be expensive, and is not necessarily available to everyone who wants one.\r\n- A person who is the target of stalking or other abusive surveillance may have a (not unreasonable) concern that their phone is itself compromised to spy on them, so they might not want to carry it with them everywhere.  If they leave it behind, how can they then detect conformant unwanted trackers?\r\n- When anyone wants to temporarily disable their own phone (or loses it, or runs out of battery, or they turn off bluetooth to conserve battery, etc), their own paired bluetooth devices will switch to \"separated\" mode, which is easier for a network of detectors to track than \"near-owner\" mode.\r\n- It's also a problem in terms of false alerts: temporarily disabled phone \u2192 \"separated\" mode peripherals \u2192 warnings for anyone traveling with the person whose phone is off.",
+          "createdAt": "2023-09-25T21:17:36Z",
+          "updatedAt": "2023-09-25T21:17:36Z"
+        }
+      ]
     },
     {
       "number": 52,
@@ -968,7 +991,7 @@
       "labels": [],
       "body": "Tracking network is the source of the problem as stated by several people in BoF meeting. Request to expand scope of charter to include this",
       "createdAt": "2023-09-20T00:41:05Z",
-      "updatedAt": "2023-09-22T20:01:45Z",
+      "updatedAt": "2023-09-25T00:19:20Z",
       "closedAt": null,
       "comments": [
         {
@@ -984,6 +1007,20 @@
           "body": "This is related to #47, because the point is that the existence of the tracking network is what creates the risk of misuse of the trackers, and especially of nonconformance.",
           "createdAt": "2023-09-22T20:01:45Z",
           "updatedAt": "2023-09-22T20:01:45Z"
+        },
+        {
+          "author": "cfossace",
+          "authorAssociation": "NONE",
+          "body": "Would \"unregistered\" trackers be considered nonconformant? I think this addresses my issue on endpoint validation #31 ",
+          "createdAt": "2023-09-25T00:14:56Z",
+          "updatedAt": "2023-09-25T00:14:56Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "That's one way to be nonconformant, but you might imagine registering a tracker and then using its keying material with a nonconformant device.",
+          "createdAt": "2023-09-25T00:19:19Z",
+          "updatedAt": "2023-09-25T00:19:19Z"
         }
       ]
     },
@@ -1103,9 +1140,17 @@
       "labels": [],
       "body": "Wasn\u2019t clear that mechanisms to disable trackers are in or out of scope.",
       "createdAt": "2023-09-20T01:02:21Z",
-      "updatedAt": "2023-09-20T01:02:21Z",
+      "updatedAt": "2023-09-25T23:40:36Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "dkg",
+          "authorAssociation": "NONE",
+          "body": "not clear what \"disable\" means here -- during the BoF, there was discussion about how Tile trackers can have this particular protocol disabled by their owner (making them directly non-conformant).  but you could also imagine the victim of unwanted tracking looking for a protocol-defined way to disable the device entirely when it is discovered.\r\n\r\nThe other question is whether it is possible for the device owner to disable some subset of capabilities of any given tracker (e.g. putting chewing gum in the speaker that is expected to make a audible alert when triggered).  Should the charter attempt to address or at least enumerate these risks, and what the implications are for the efficacy of this protocol?",
+          "createdAt": "2023-09-25T23:40:36Z",
+          "updatedAt": "2023-09-25T23:40:36Z"
+        }
+      ]
     },
     {
       "number": 62,
@@ -1135,7 +1180,7 @@
       "labels": [],
       "body": "some parties proposed attestation should be in scope and others proposed it should be out of scope for charter.",
       "createdAt": "2023-09-20T01:07:26Z",
-      "updatedAt": "2023-09-22T19:58:25Z",
+      "updatedAt": "2023-09-25T23:36:08Z",
       "closedAt": null,
       "comments": [
         {
@@ -1144,6 +1189,20 @@
           "body": "I don't think this is the right question. Attestation is a technical mechanism. The question to ask is whether fake trackers are part of the threat model.",
           "createdAt": "2023-09-22T19:58:25Z",
           "updatedAt": "2023-09-22T19:58:25Z"
+        },
+        {
+          "author": "dkg",
+          "authorAssociation": "NONE",
+          "body": "i agree with @ekr here that attestation specifically isn't the right goal here.  I'm not sure what \"fake trackers\" means, though.  If there is any question about whether a tracker device is conformant or non-conformant (see #47), the charter needs to be clear about how that conformance or non-conformance is assessed (or not!) by other players in the ecosystem.",
+          "createdAt": "2023-09-25T23:29:24Z",
+          "updatedAt": "2023-09-25T23:29:24Z"
+        },
+        {
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "@dkg, you're right that I wasn't being clear.\r\n\r\nThe charter and the associated draft contain a set of requirements for how trackers are supposed to behave. These requirements are essential to providing the detection capability claimed by the specification. By hypothesis, trackers manufactured by \"legitimate\" vendors will be conformant and therefore detectable. The question I am trying to get at is whether it is possible to build a non-conformant tracker that will nevertheless be able to participate in the tracking system but is not detectable. That's what I meant by \"fake\" but hopefully this is a clearer statement.\r\n\r\nI'm distinguishing this from the question of modifying a \"legitimate\" tracker because one might imagine a system in which:\r\n\r\n1. Tracker vendors attested to conformance in some non-technical way\r\n2. There was a technical attestation that a given tracker was manufactured by one of the aforementioned vendors.\r\n3. That attestation was checked prior to letting that tracker participate in the network.\r\n\r\nThis would be intended to prevent other vendors from just making nonconformant trackers and having them accepted. In this case, it would be the \"legitimate\" vendor's responsibility to ensure that the tracker was hard to modify and if it were determined that it was easy to do so, that would be a vulnerability they should fix, but the protocol wouldn't engage with that other than, potentially blocklisting trackers of that model/vendor. I'm not saying this is a good system, as I prefer not to rely on trusted hardware; I just think it's a different threat.",
+          "createdAt": "2023-09-25T23:35:38Z",
+          "updatedAt": "2023-09-25T23:36:08Z"
         }
       ]
     },
@@ -1175,7 +1234,7 @@
       "labels": [],
       "body": "Jonathan Hoyland mentioned he wants to include a signature in the charter to authenticate",
       "createdAt": "2023-09-20T01:13:51Z",
-      "updatedAt": "2023-09-22T19:59:46Z",
+      "updatedAt": "2023-09-25T23:43:49Z",
       "closedAt": null,
       "comments": [
         {
@@ -1184,6 +1243,13 @@
           "body": "This also seems like a technical mechanism that might or might not be useful. The right question is if we are trying to authenticate the tracker.",
           "createdAt": "2023-09-22T19:59:46Z",
           "updatedAt": "2023-09-22T19:59:46Z"
+        },
+        {
+          "author": "dkg",
+          "authorAssociation": "NONE",
+          "body": "It's not clear to me what the original text means.  Surely the charter should not include a literal signed object (e.g. as a sample).  @ekr's revision might make more sense, but then this is also in the same territory as #63.  I'd ask @ekr's question more precisely though: if a mechanism for authenticating the tracker is part of the protocol, which parties in the ecosystem are expected to be able to do that authentication?  what specifically are they trying to authenticate?  what is their recourse if the authentication fails?",
+          "createdAt": "2023-09-25T23:43:49Z",
+          "updatedAt": "2023-09-25T23:43:49Z"
         }
       ]
     },
@@ -1901,7 +1967,7 @@
       "labels": [],
       "body": "Adding changes to explicitly state that near-owner bit is the least significant bit",
       "createdAt": "2023-08-31T22:05:25Z",
-      "updatedAt": "2023-08-31T23:02:15Z",
+      "updatedAt": "2023-09-25T15:28:05Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "5b3a2cfa3a7f5e5329558d5ee1f823ca3782e28c",
@@ -1926,6 +1992,19 @@
           "createdAt": "2023-08-31T23:02:15Z",
           "updatedAt": "2023-08-31T23:02:15Z",
           "comments": []
+        },
+        {
+          "id": "PRR_kwDOJdqgvc5h5bsH",
+          "commit": {
+            "abbreviatedOid": "eed562c"
+          },
+          "author": "bdetwiler",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-25T15:28:05Z",
+          "updatedAt": "2023-09-25T15:28:05Z",
+          "comments": []
         }
       ]
     },
@@ -1941,7 +2020,7 @@
       "labels": [],
       "body": "Updated sections from serial number --> identifier to generalize language.",
       "createdAt": "2023-08-31T23:16:49Z",
-      "updatedAt": "2023-09-07T18:49:20Z",
+      "updatedAt": "2023-09-25T15:28:36Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "5b3a2cfa3a7f5e5329558d5ee1f823ca3782e28c",
@@ -1973,6 +2052,19 @@
           "body": "",
           "createdAt": "2023-09-07T18:49:20Z",
           "updatedAt": "2023-09-07T18:49:20Z",
+          "comments": []
+        },
+        {
+          "id": "PRR_kwDOJdqgvc5h5b7K",
+          "commit": {
+            "abbreviatedOid": "1e0143f"
+          },
+          "author": "bdetwiler",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-09-25T15:28:36Z",
+          "updatedAt": "2023-09-25T15:28:36Z",
           "comments": []
         }
       ]
@@ -2039,6 +2131,32 @@
           "comments": []
         }
       ]
+    },
+    {
+      "number": 71,
+      "id": "PR_kwDOJdqgvc5bI1_B",
+      "title": "Updates to protocol details",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/71",
+      "state": "OPEN",
+      "author": "bdetwiler",
+      "authorAssociation": "OWNER",
+      "assignees": [],
+      "labels": [],
+      "body": "* Add UUID values for Service and Characteristics\r\n* Add value for Service Data TLV\r\n* Add Product Name to the Product Data registry\r\n* Add Protocol Implementation Version to the list of non-owner commands\r\n* Update opcode values in protocol",
+      "createdAt": "2023-09-25T15:25:23Z",
+      "updatedAt": "2023-09-25T15:25:24Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "protocol-updates",
+      "headRefOid": "add7785e006bc29f13f25a006a1d5ade6b4d4f83",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
     }
   ]
 }
