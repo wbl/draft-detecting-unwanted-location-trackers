@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-09-26T00:37:11.497363+00:00",
+  "timestamp": "2023-09-28T00:36:58.326500+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -935,7 +935,7 @@
       "labels": [],
       "body": "Not having access to a phone is a concern. Brought up by Ted Hardie.",
       "createdAt": "2023-09-20T00:27:27Z",
-      "updatedAt": "2023-09-25T21:17:36Z",
+      "updatedAt": "2023-09-26T15:53:12Z",
       "closedAt": null,
       "comments": [
         {
@@ -944,6 +944,13 @@
           "body": "no access to a phone is a concern in several different directions:\r\n\r\n- A modern, up-to-date, well-maintained mobile device can be expensive, and is not necessarily available to everyone who wants one.\r\n- A person who is the target of stalking or other abusive surveillance may have a (not unreasonable) concern that their phone is itself compromised to spy on them, so they might not want to carry it with them everywhere.  If they leave it behind, how can they then detect conformant unwanted trackers?\r\n- When anyone wants to temporarily disable their own phone (or loses it, or runs out of battery, or they turn off bluetooth to conserve battery, etc), their own paired bluetooth devices will switch to \"separated\" mode, which is easier for a network of detectors to track than \"near-owner\" mode.\r\n- It's also a problem in terms of false alerts: temporarily disabled phone \u2192 \"separated\" mode peripherals \u2192 warnings for anyone traveling with the person whose phone is off.",
           "createdAt": "2023-09-25T21:17:36Z",
           "updatedAt": "2023-09-25T21:17:36Z"
+        },
+        {
+          "author": "bledvina",
+          "authorAssociation": "NONE",
+          "body": "@dkg are you agreeing we should add this to the charter? Wanna take a stab at the PR?",
+          "createdAt": "2023-09-26T15:53:12Z",
+          "updatedAt": "2023-09-26T15:53:12Z"
         }
       ]
     },
@@ -1140,7 +1147,7 @@
       "labels": [],
       "body": "Wasn\u2019t clear that mechanisms to disable trackers are in or out of scope.",
       "createdAt": "2023-09-20T01:02:21Z",
-      "updatedAt": "2023-09-25T23:40:36Z",
+      "updatedAt": "2023-09-26T15:49:42Z",
       "closedAt": null,
       "comments": [
         {
@@ -1149,6 +1156,13 @@
           "body": "not clear what \"disable\" means here -- during the BoF, there was discussion about how Tile trackers can have this particular protocol disabled by their owner (making them directly non-conformant).  but you could also imagine the victim of unwanted tracking looking for a protocol-defined way to disable the device entirely when it is discovered.\r\n\r\nThe other question is whether it is possible for the device owner to disable some subset of capabilities of any given tracker (e.g. putting chewing gum in the speaker that is expected to make a audible alert when triggered).  Should the charter attempt to address or at least enumerate these risks, and what the implications are for the efficacy of this protocol?",
           "createdAt": "2023-09-25T23:40:36Z",
           "updatedAt": "2023-09-25T23:40:36Z"
+        },
+        {
+          "author": "bledvina",
+          "authorAssociation": "NONE",
+          "body": "Good point that this is not well-defined :-)\r\n\r\nI think \"disable\" is intended to mean a mechanism available to a person who finds an unwanted tracker in which they can disable its remote location capabilities (e.g.., BT crowd-sourcing) so that the owner of it can not get location updates. For example, this could be removing the battery, pressing a button on the accessory, etc. \r\n\r\n",
+          "createdAt": "2023-09-26T15:49:42Z",
+          "updatedAt": "2023-09-26T15:49:42Z"
         }
       ]
     },
@@ -1234,7 +1248,7 @@
       "labels": [],
       "body": "Jonathan Hoyland mentioned he wants to include a signature in the charter to authenticate",
       "createdAt": "2023-09-20T01:13:51Z",
-      "updatedAt": "2023-09-25T23:43:49Z",
+      "updatedAt": "2023-09-26T18:05:02Z",
       "closedAt": null,
       "comments": [
         {
@@ -1250,6 +1264,20 @@
           "body": "It's not clear to me what the original text means.  Surely the charter should not include a literal signed object (e.g. as a sample).  @ekr's revision might make more sense, but then this is also in the same territory as #63.  I'd ask @ekr's question more precisely though: if a mechanism for authenticating the tracker is part of the protocol, which parties in the ecosystem are expected to be able to do that authentication?  what specifically are they trying to authenticate?  what is their recourse if the authentication fails?",
           "createdAt": "2023-09-25T23:43:49Z",
           "updatedAt": "2023-09-25T23:43:49Z"
+        },
+        {
+          "author": "bledvina",
+          "authorAssociation": "NONE",
+          "body": "I created this issue based on Jonathan Hoyland's comments in the BoF meeting :-). Anyone know if Jonathan has an account on Github?",
+          "createdAt": "2023-09-26T16:06:41Z",
+          "updatedAt": "2023-09-26T16:33:24Z"
+        },
+        {
+          "author": "dkg",
+          "authorAssociation": "NONE",
+          "body": "pinging @jhoyla",
+          "createdAt": "2023-09-26T18:05:02Z",
+          "updatedAt": "2023-09-26T18:05:02Z"
         }
       ]
     },
