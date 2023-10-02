@@ -5,12 +5,12 @@
 Network Working Group                                         B. Ledvina
 Internet-Draft                                                     Apple
 Intended status: Informational                               Z. Eddinger
-Expires: 3 March 2024                                             Google
+Expires: 4 April 2024                                             Google
                                                              B. Detwiler
                                                                    Apple
                                                           S. P. Polatkan
                                                                   Google
-                                                          31 August 2023
+                                                          2 October 2023
 
 
                   Detecting Unwanted Location Trackers
@@ -50,7 +50,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 3 March 2024.
+   This Internet-Draft will expire on 4 April 2024.
 
 Copyright Notice
 
@@ -344,8 +344,8 @@ Table of Contents
      +-------+-----------------------------------------+-------------+
      |   13  | Protocol ID (TBD value)                 |   REQUIRED  |
      +-------+-----------------------------------------+-------------+
-     |   14  | Near-owner bit (1 bit, least            |   REQUIRED  |
-     |       | significant bit) + reserved (7 bits)    |             |
+     |   14  | Near-owner bit (1 bit) + reserved (7    |   REQUIRED  |
+     |       | bits)                                   |             |
      +-------+-----------------------------------------+-------------+
      | 15-36 | Proprietary company payload data        |   OPTIONAL  |
      +-------+-----------------------------------------+-------------+
@@ -470,8 +470,6 @@ Table of Contents
    accessory MUST set the near-owner bit to be 1 when the near-owner
    state is in near-owner mode, otherwise the bit is set to 0.  Table 3
    specifies the values of this bit.
-
-   The near-owner bit MUST be the least significant bit.
 
                 +======================+==================+
                 | Near-owner Bit Value | Near-owner state |
