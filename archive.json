@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-10-01T00:42:22.000424+00:00",
+  "timestamp": "2023-10-03T00:37:38.476585+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -1192,7 +1192,7 @@
       ],
       "body": "Wasn\u2019t clear that mechanisms to disable trackers are in or out of scope.",
       "createdAt": "2023-09-20T01:02:21Z",
-      "updatedAt": "2023-09-28T19:23:57Z",
+      "updatedAt": "2023-10-02T16:52:23Z",
       "closedAt": null,
       "comments": [
         {
@@ -1208,6 +1208,13 @@
           "body": "Good point that this is not well-defined :-)\r\n\r\nI think \"disable\" is intended to mean a mechanism available to a person who finds an unwanted tracker in which they can disable its remote location capabilities (e.g.., BT crowd-sourcing) so that the owner of it can not get location updates. For example, this could be removing the battery, pressing a button on the accessory, etc. \r\n\r\n",
           "createdAt": "2023-09-26T15:49:42Z",
           "updatedAt": "2023-09-26T15:49:42Z"
+        },
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I opened PR #75 in an attempt to address this issue",
+          "createdAt": "2023-10-02T16:52:23Z",
+          "updatedAt": "2023-10-02T16:52:23Z"
         }
       ]
     },
@@ -2406,6 +2413,58 @@
       "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "headRefName": "bledvina-patch-1",
       "headRefOid": "b1da992c7d449bf31eea9cbbea0be878472c9714",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 75,
+      "id": "PR_kwDOJdqgvc5bsTO9",
+      "title": "Update charter-detecting-unwanted-location-trackers.md",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/75",
+      "state": "OPEN",
+      "author": "bledvina",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "Added a sentence to call out physically disabling a tracker being in scope of WG. This attempts to address issue #61",
+      "createdAt": "2023-10-02T16:52:00Z",
+      "updatedAt": "2023-10-02T16:52:00Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "bledvina-patch-2",
+      "headRefOid": "a75405ae39ff0c45dc3d48f59ef5ffdfda26d48e",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [],
+      "reviews": []
+    },
+    {
+      "number": 76,
+      "id": "PR_kwDOJdqgvc5buitx",
+      "title": "update to backwards compatibility",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/76",
+      "state": "OPEN",
+      "author": "zaeddinger",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2023-10-02T22:55:24Z",
+      "updatedAt": "2023-10-02T22:55:25Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "zae-backwards-compat-update",
+      "headRefOid": "e00d44a2f11f3a2cab6d35c4737b4bc196935d50",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
