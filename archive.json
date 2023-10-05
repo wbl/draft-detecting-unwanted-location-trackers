@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-10-03T00:37:38.476585+00:00",
+  "timestamp": "2023-10-05T00:37:04.602069+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -916,9 +916,17 @@
       ],
       "body": "Privacy goals are potentially too specific, refine privacy goals to either be more general or WG may want to define more specific privacy goals later.",
       "createdAt": "2023-09-15T18:33:37Z",
-      "updatedAt": "2023-09-28T19:23:52Z",
+      "updatedAt": "2023-10-03T03:11:44Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "From Roman's summary (https://github.com/rdanyliw/ietf-dult/blob/main/dult-scope.md) we may want to address: \"Clarifying privacy protections of the tag owner in the charter\"",
+          "createdAt": "2023-10-03T03:11:44Z",
+          "updatedAt": "2023-10-03T03:11:44Z"
+        }
+      ]
     },
     {
       "number": 50,
@@ -1112,9 +1120,17 @@
       ],
       "body": "Entire BT payload needs to be in scope. Tommy Pauly, EKR, Alissa, and Shivan Sahib mentioned this (and probably others too)",
       "createdAt": "2023-09-20T00:55:38Z",
-      "updatedAt": "2023-09-28T19:23:55Z",
+      "updatedAt": "2023-10-03T03:15:22Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "This bullet in the Program of Work implies the entire BT payload is in scope: \"Allow a tracking accessory to identify & advertise its presence when in a detectable mode.\" Do people feel we need to add more to the charter to address this issue? ",
+          "createdAt": "2023-10-03T03:15:21Z",
+          "updatedAt": "2023-10-03T03:15:21Z"
+        }
+      ]
     },
     {
       "number": 58,
@@ -2458,13 +2474,13 @@
       "labels": [],
       "body": "",
       "createdAt": "2023-10-02T22:55:24Z",
-      "updatedAt": "2023-10-02T22:55:25Z",
+      "updatedAt": "2023-10-03T04:43:37Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
       "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "headRefName": "zae-backwards-compat-update",
-      "headRefOid": "e00d44a2f11f3a2cab6d35c4737b4bc196935d50",
+      "headRefOid": "a4e00c9ef46e8b07cc2c590ee88260dab28f4fcb",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
