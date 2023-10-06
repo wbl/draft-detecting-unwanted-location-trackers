@@ -12,25 +12,25 @@
 <meta content="
        This document lists a set of best practices and protocols for accessory manufacturers whose products have built-in location-tracking capabilities. By following these requirements and recommendations, a location-tracking accessory will be compatible with unwanted tracking detection and alerts on mobile platforms. This is an important capability for improving the privacy and safety of individuals in the circumstance that those accessories are used to track their location without their knowledge or consent. 
     " name="description">
-<meta content="xml2rfc 3.18.0" name="generator">
+<meta content="xml2rfc 3.18.1" name="generator">
 <meta content="unwanted tracking" name="keyword">
 <meta content="location tracker" name="keyword">
 <meta content="draft-detecting-unwanted-location-trackers-latest" name="ietf.draft">
 <!-- Generator version information:
-  xml2rfc 3.18.0
+  xml2rfc 3.18.1
     Python 3.11.5
     ConfigArgParse 1.5.3
     google-i18n-address 3.1.0
     intervaltree 3.1.0
     Jinja2 3.1.2
     lxml 4.9.3
-    platformdirs 3.10.0
+    platformdirs 3.11.0
     pycountry 22.3.5
     PyYAML 6.0
     requests 2.31.0
     setuptools 67.7.2
     six 1.16.0
-    wcwidth 0.2.6
+    wcwidth 0.2.8
 -->
 <link href="draft-detecting-unwanted-location-trackers.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
@@ -1029,11 +1029,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <thead><tr>
 <td class="left">Internet-Draft</td>
 <td class="center">Detecting Unwanted Location Trackers</td>
-<td class="right">September 2023</td>
+<td class="right">October 2023</td>
 </tr></thead>
 <tfoot><tr>
 <td class="left">Ledvina, et al.</td>
-<td class="center">Expires 31 March 2024</td>
+<td class="center">Expires 8 April 2024</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
 </table>
@@ -1046,12 +1046,12 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <dd class="internet-draft">draft-detecting-unwanted-location-trackers-latest</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
-<time datetime="2023-09-28" class="published">28 September 2023</time>
+<time datetime="2023-10-06" class="published">6 October 2023</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
 <dd class="intended-status">Informational</dd>
 <dt class="label-expires">Expires:</dt>
-<dd class="expires"><time datetime="2024-03-31">31 March 2024</time></dd>
+<dd class="expires"><time datetime="2024-04-08">8 April 2024</time></dd>
 <dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
@@ -1105,7 +1105,7 @@ svg :is([fill="white"], [fill^="#fff"]) {
         time. It is inappropriate to use Internet-Drafts as reference
         material or to cite them other than as "work in progress."<a href="#section-boilerplate.1-3" class="pilcrow">¶</a></p>
 <p id="section-boilerplate.1-4">
-        This Internet-Draft will expire on 31 March 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
+        This Internet-Draft will expire on 8 April 2024.<a href="#section-boilerplate.1-4" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="copyright">
@@ -1425,27 +1425,38 @@ appear in all capitals, as shown here.<a href="#section-1.1-1" class="pilcrow">�
         </h3>
 <p id="section-1.2-1">Throughout this document, these terms have specific meanings:<a href="#section-1.2-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-1.2-2.1">The term platform is used to refer to mobile device hardware and associated operating system. Examples of mobile devices are phones, tablets, laptops, etc.<a href="#section-1.2-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-1.2-2.1">
+            <p id="section-1.2-2.1.1">The term platform is used to refer to mobile device hardware and associated operating system. Examples of mobile devices are phones, tablets, laptops, etc.<a href="#section-1.2-2.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.2">The term accessory is used to refer to any product intended to interface with a platform through the means described in this specification.<a href="#section-1.2-2.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.2">
+            <p id="section-1.2-2.2.1">The term accessory is used to refer to any product intended to interface with a platform through the means described in this specification.<a href="#section-1.2-2.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.3">The term owner device is a device that is associated with the accessory and can retrieve the accessory’s location.<a href="#section-1.2-2.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.3">
+            <p id="section-1.2-2.3.1">The term owner device is a device that is associated with the accessory and can retrieve the accessory’s location.<a href="#section-1.2-2.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.4">The term non-owner device refers to a device that may connect to an accessory but is not an owner device of that accessory.<a href="#section-1.2-2.4" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.4">
+            <p id="section-1.2-2.4.1">The term non-owner device refers to a device that may connect to an accessory but is not an owner device of that accessory.<a href="#section-1.2-2.4.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.5">The term location-tracking accessory refers to any accessory that has location-tracking capabilities, including, but not limited to, crowd-sourced location, GPS/GNSS location, WiFi location, cell location, etc., and provides the location information back to the owner of the accessory via the internet, cellular connection, etc.<a href="#section-1.2-2.5" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.5">
+            <p id="section-1.2-2.5.1">The term location-tracking accessory refers to any accessory that has location-tracking capabilities, including, but not limited to, crowd-sourced location, GPS/GNSS location, WiFi location, cell location, etc., and provides the location information back to the owner of the accessory via the internet, cellular connection, etc.<a href="#section-1.2-2.5.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.6">The term location-enabled state refers to the state an accessory in where its location can be remotely viewed by its owner<a href="#section-1.2-2.6" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.6">
+            <p id="section-1.2-2.6.1">The term location-enabled state refers to the state an accessory in where its location can be remotely viewed by its owner<a href="#section-1.2-2.6.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.7">The term location-enabled advertisement payload refers to the Bluetooth (BT) advertisement payload that is advertised when an accessory has recently, is currently, or will in the future provide location updates to its owner<a href="#section-1.2-2.7" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.7">
+            <p id="section-1.2-2.7.1">The term location-enabled advertisement payload refers to the Bluetooth (BT) advertisement payload that is advertised when an accessory has recently, is currently, or will in the future provide location updates to its owner<a href="#section-1.2-2.7.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.8">The term unwanted tracking (UT) refers to undesired tracking of a person, their property, or their belongings by a location-enabled accessory.<a href="#section-1.2-2.8" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.8">
+            <p id="section-1.2-2.8.1">The term unwanted tracking (UT) refers to undesired tracking of a person, their property, or their belongings by a location-enabled accessory.<a href="#section-1.2-2.8.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.9">The term unwanted tracking detection refers to the algorithms that detect the presence of an unknown accessory traveling with a person over time.<a href="#section-1.2-2.9" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.9">
+            <p id="section-1.2-2.9.1">The term unwanted tracking detection refers to the algorithms that detect the presence of an unknown accessory traveling with a person over time.<a href="#section-1.2-2.9.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.10">The term unwanted tracking alert refers to notifying the user of the presence of an unrecognized accessory that may be traveling with them over time and allows them to take various actions, including playing a sound on the accessory if it’s in Bluetooth Low Energy (LE) range.<a href="#section-1.2-2.10" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.10">
+            <p id="section-1.2-2.10.1">The term unwanted tracking alert refers to notifying the user of the presence of an unrecognized accessory that may be traveling with them over time and allows them to take various actions, including playing a sound on the accessory if it’s in Bluetooth Low Energy (LE) range.<a href="#section-1.2-2.10.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-1.2-2.11">The term platform-compatible method refers to a method of communication between the platform and the accessory/accessory manufacturers to exchange information, including, but not limited to, BT GATT protocol, BT advertisement, HTTP, etc.<a href="#section-1.2-2.11" class="pilcrow">¶</a>
+          <li class="normal" id="section-1.2-2.11">
+            <p id="section-1.2-2.11.1">The term platform-compatible method refers to a method of communication between the platform and the accessory/accessory manufacturers to exchange information, including, but not limited to, BT GATT protocol, BT advertisement, HTTP, etc.<a href="#section-1.2-2.11.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 </section>
@@ -2031,9 +2042,11 @@ After first motion is detected, the movement detection period is decreased to T<
 The accessory <span class="bcp14">MUST</span> continue to play a sound for every detected motion.
 The accessory <span class="bcp14">SHALL</span> disable the motion detector for T<sub>SEPARATED_UT_BACKOFF</sub> under either of the following conditions:<a href="#section-3.12.2.1-4" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.12.2.1-5.1">Motion has been detected for 20 seconds at T<sub>SEPARATED_UT_SAMPLING_RATE2</sub> periods.<a href="#section-3.12.2.1-5.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.12.2.1-5.1">
+                <p id="section-3.12.2.1-5.1.1">Motion has been detected for 20 seconds at T<sub>SEPARATED_UT_SAMPLING_RATE2</sub> periods.<a href="#section-3.12.2.1-5.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.12.2.1-5.2">Ten sounds are played.<a href="#section-3.12.2.1-5.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.12.2.1-5.2">
+                <p id="section-3.12.2.1-5.2.1">Ten sounds are played.<a href="#section-3.12.2.1-5.2.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 <p id="section-3.12.2.1-6">If the accessory is still in separated state at the end of T<sub>SEPARATED_UT_BACKOFF</sub>, the UT behavior <span class="bcp14">MUST</span> restart.<a href="#section-3.12.2.1-6" class="pilcrow">¶</a></p>
@@ -2165,19 +2178,26 @@ The sound maker <span class="bcp14">MUST</span> emit a sound with minimum 60 Pho
             </h5>
 <p id="section-3.12.4.1-1">The Sound_Start opcode is used to play sound on the sound maker of the accessory. The sound maker <span class="bcp14">MUST</span> play sound for a minimum duration of 5 seconds.<a href="#section-3.12.4.1-1" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.12.4.1-2.1">The accessory <span class="bcp14">SHALL</span> confirm the start of the play sound procedure by sending a <span><a href="#command-response" class="internal xref">Command_Response</a> (<a href="#command-response" class="auto internal xref">Section 3.12.4.1.1</a>)</span> with the corresponding CommandOpCode and a ResponseStatus value of Success.<a href="#section-3.12.4.1-2.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.12.4.1-2.1">
+                <p id="section-3.12.4.1-2.1.1">The accessory <span class="bcp14">SHALL</span> confirm the start of the play sound procedure by sending a <span><a href="#command-response" class="internal xref">Command_Response</a> (<a href="#command-response" class="auto internal xref">Section 3.12.4.1.1</a>)</span> with the corresponding CommandOpCode and a ResponseStatus value of Success.<a href="#section-3.12.4.1-2.1.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.12.4.1-2.2">Once the play sound action is completed, the accessory sends the Sound_Completed message.<a href="#section-3.12.4.1-2.2" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.12.4.1-2.2">
+                <p id="section-3.12.4.1-2.2.1">Once the play sound action is completed, the accessory sends the Sound_Completed message.<a href="#section-3.12.4.1-2.2.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.12.4.1-2.3">The Sound_Stop opcode is used to stop an ongoing sound request.<a href="#section-3.12.4.1-2.3" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.12.4.1-2.3">
+                <p id="section-3.12.4.1-2.3.1">The Sound_Stop opcode is used to stop an ongoing sound request.<a href="#section-3.12.4.1-2.3.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.12.4.1-2.4">If the sound event is completed or was not initiated by the connected non owner device, the accessory responds with the Invalid_state ResponseStatus code.<a href="#section-3.12.4.1-2.4" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.12.4.1-2.4">
+                <p id="section-3.12.4.1-2.4.1">If the sound event is completed or was not initiated by the connected non owner device, the accessory responds with the Invalid_state ResponseStatus code.<a href="#section-3.12.4.1-2.4.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.12.4.1-2.5">If the accessory does not support the play sound procedure, it responds with Invalid_command ResponseStatus code.<a href="#section-3.12.4.1-2.5" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.12.4.1-2.5">
+                <p id="section-3.12.4.1-2.5.1">If the accessory does not support the play sound procedure, it responds with Invalid_command ResponseStatus code.<a href="#section-3.12.4.1-2.5.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.12.4.1-2.6">If a Sound_Start procedure is initiated when another play sound action is in progress, it rejects with Invalid_state error code.<a href="#section-3.12.4.1-2.6" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.12.4.1-2.6">
+                <p id="section-3.12.4.1-2.6.1">If a Sound_Start procedure is initiated when another play sound action is in progress, it rejects with Invalid_state error code.<a href="#section-3.12.4.1-2.6.1" class="pilcrow">¶</a></p>
 </li>
-              <li class="normal" id="section-3.12.4.1-2.7">The accessory <span class="bcp14">SHALL</span> confirm the completion of the stop sound procedure by sending  the Sound_Completed message.<a href="#section-3.12.4.1-2.7" class="pilcrow">¶</a>
+              <li class="normal" id="section-3.12.4.1-2.7">
+                <p id="section-3.12.4.1-2.7.1">The accessory <span class="bcp14">SHALL</span> confirm the completion of the stop sound procedure by sending  the Sound_Completed message.<a href="#section-3.12.4.1-2.7.1" class="pilcrow">¶</a></p>
 </li>
             </ul>
 <div id="command-response">
@@ -2415,9 +2435,11 @@ Security considerations are discussed in <a href="#sn-lookup-security" class="au
 <p id="section-3.15.1-1">A limited amount of obfuscated owner information from the owner registry <span class="bcp14">SHALL</span> be made available to the platform along with a <a href="serial-number-retrieval">retrieved identifier</a>. This information <span class="bcp14">SHALL</span> be part of the response of the <a href="serial-number-from-server">identifier retrieval from a server</a> which can be rendered in a platform's HTML view.<a href="#section-3.15.1-1" class="pilcrow">¶</a></p>
 <p id="section-3.15.1-2">This <span class="bcp14">MUST</span> include at least one of the following:<a href="#section-3.15.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-3.15.1-3.1">the last four digits of the owner's telephone number. e.g., (***) ***-5555<a href="#section-3.15.1-3.1" class="pilcrow">¶</a>
+<li class="normal" id="section-3.15.1-3.1">
+              <p id="section-3.15.1-3.1.1">the last four digits of the owner's telephone number. e.g., (***) ***-5555<a href="#section-3.15.1-3.1.1" class="pilcrow">¶</a></p>
 </li>
-            <li class="normal" id="section-3.15.1-3.2">an email address with the first letter of the username and entity visible, as well as the entire extension. e.g., b********@i*****.com<a href="#section-3.15.1-3.2" class="pilcrow">¶</a>
+            <li class="normal" id="section-3.15.1-3.2">
+              <p id="section-3.15.1-3.2.1">an email address with the first letter of the username and entity visible, as well as the entire extension. e.g., b********@i*****.com<a href="#section-3.15.1-3.2.1" class="pilcrow">¶</a></p>
 </li>
           </ul>
 </section>
@@ -2617,9 +2639,11 @@ This group includes the "Manufacturer Protocol ID" and "Product Data" registries
 <p id="section-8.1-1">New entries are assigned only for values that have received Expert Review, per <span><a href="https://rfc-editor.org/rfc/rfc8126#section-4.5" class="relref">Section 4.5</a> of [<a href="#RFC8126" class="cite xref">RFC8126</a>]</span>.<a href="#section-8.1-1" class="pilcrow">¶</a></p>
 <p id="section-8.1-2">An entry in this registry contains the following fields:<a href="#section-8.1-2" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-8.1-3.1">Manufacturer Name: the name of an organization that is producing a location-tracker accessory<a href="#section-8.1-3.1" class="pilcrow">¶</a>
+<li class="normal" id="section-8.1-3.1">
+            <p id="section-8.1-3.1.1">Manufacturer Name: the name of an organization that is producing a location-tracker accessory<a href="#section-8.1-3.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-8.1-3.2">Protocol ID: a 1-byte value specifying the Protocol ID associated with the Manufacturer Name<a href="#section-8.1-3.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-8.1-3.2">
+            <p id="section-8.1-3.2.1">Protocol ID: a 1-byte value specifying the Protocol ID associated with the Manufacturer Name<a href="#section-8.1-3.2.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <div id="temporary-registry">
@@ -2670,14 +2694,18 @@ This group includes the "Manufacturer Protocol ID" and "Product Data" registries
 left empty if the accessory does not support that capability.<a href="#section-8.2-2" class="pilcrow">¶</a></p>
 <p id="section-8.2-3">An entry in this registry contains the following fields:<a href="#section-8.2-3" class="pilcrow">¶</a></p>
 <ul class="normal">
-<li class="normal" id="section-8.2-4.1">Product Data: an 8-byte string representing a unique identifier for a product. See <span><a href="#product-data" class="internal xref">Product Data</a> (<a href="#product-data" class="auto internal xref">Section 3.11.1.1</a>)</span>.<a href="#section-8.2-4.1" class="pilcrow">¶</a>
+<li class="normal" id="section-8.2-4.1">
+            <p id="section-8.2-4.1.1">Product Data: an 8-byte string representing a unique identifier for a product. See <span><a href="#product-data" class="internal xref">Product Data</a> (<a href="#product-data" class="auto internal xref">Section 3.11.1.1</a>)</span>.<a href="#section-8.2-4.1.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-8.2-4.2">Disablement Instructions: a string representing the URL where disablement instructions can be retrieved.<a href="#section-8.2-4.2" class="pilcrow">¶</a>
+          <li class="normal" id="section-8.2-4.2">
+            <p id="section-8.2-4.2.1">Disablement Instructions: a string representing the URL where disablement instructions can be retrieved.<a href="#section-8.2-4.2.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-8.2-4.3">Serial Number Look-up Over Bluetooth Instructions: a string representing the URL where the text instructions and visual depictions for enabling
-serial number look-up over Bluetooth LE can be retrieved.<a href="#section-8.2-4.3" class="pilcrow">¶</a>
+          <li class="normal" id="section-8.2-4.3">
+            <p id="section-8.2-4.3.1">Serial Number Look-up Over Bluetooth Instructions: a string representing the URL where the text instructions and visual depictions for enabling
+serial number look-up over Bluetooth LE can be retrieved.<a href="#section-8.2-4.3.1" class="pilcrow">¶</a></p>
 </li>
-          <li class="normal" id="section-8.2-4.4">Serial Number Look-up: a string representing the URL where the serial number and obfuscated owner information can be retrieved.<a href="#section-8.2-4.4" class="pilcrow">¶</a>
+          <li class="normal" id="section-8.2-4.4">
+            <p id="section-8.2-4.4.1">Serial Number Look-up: a string representing the URL where the serial number and obfuscated owner information can be retrieved.<a href="#section-8.2-4.4.1" class="pilcrow">¶</a></p>
 </li>
         </ul>
 <div id="temporary-registry-1">
