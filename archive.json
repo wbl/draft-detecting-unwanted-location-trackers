@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2023-10-05T00:37:04.602069+00:00",
+  "timestamp": "2023-10-08T00:39:52.525919+00:00",
   "repo": "bdetwiler/draft-detecting-unwanted-location-trackers",
   "labels": [
     {
@@ -1019,9 +1019,17 @@
       ],
       "body": "Question was asked about concerns around false unwanted tracking alerts. Certainly don\u2019t want an annoying system with too many false alerts. ",
       "createdAt": "2023-09-20T00:32:32Z",
-      "updatedAt": "2023-09-28T19:23:54Z",
+      "updatedAt": "2023-10-06T15:41:47Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "I feel like we might be able to cover the notion brought up in this issue with PR #77. In other words, evaluation of the efficacy of any solution could include evaluation the false alert rate. What do others think?",
+          "createdAt": "2023-10-06T15:41:47Z",
+          "updatedAt": "2023-10-06T15:41:47Z"
+        }
+      ]
     },
     {
       "number": 54,
@@ -1239,7 +1247,7 @@
       "id": "I_kwDOJdqgvc5xe3ZA",
       "title": "Charter: precise use case",
       "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/issues/62",
-      "state": "OPEN",
+      "state": "CLOSED",
       "author": "bledvina",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
@@ -1248,9 +1256,17 @@
       ],
       "body": "Kathleen Moriarty (and Missell) wants to make sure we\u2019re precise on the use case. \r\n\r\nOne proposal is that functional scope should be \u201ctracking device that is yours preventing unknown surveillance\u201d ",
       "createdAt": "2023-09-20T01:05:29Z",
-      "updatedAt": "2023-09-28T19:23:57Z",
-      "closedAt": null,
-      "comments": []
+      "updatedAt": "2023-10-06T15:34:23Z",
+      "closedAt": "2023-10-06T15:33:52Z",
+      "comments": [
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Closing this as a duplicate of #52",
+          "createdAt": "2023-10-06T15:34:23Z",
+          "updatedAt": "2023-10-06T15:34:23Z"
+        }
+      ]
     },
     {
       "number": 63,
@@ -1313,9 +1329,17 @@
       ],
       "body": " Sam Weiler said he cares about preventing unwanted trackers (not just detecting unwanted trackers)",
       "createdAt": "2023-09-20T01:10:05Z",
-      "updatedAt": "2023-09-28T19:23:58Z",
+      "updatedAt": "2023-10-06T15:29:19Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "My personal opinion is that completely *preventing* unwanted tracking, although an admirable goal, is maybe too much of a reach for this first working group. What do others think?",
+          "createdAt": "2023-10-06T15:29:19Z",
+          "updatedAt": "2023-10-06T15:29:19Z"
+        }
+      ]
     },
     {
       "number": 65,
@@ -1414,9 +1438,17 @@
       ],
       "body": "Stephen Farrell stated we should require evidence of efficacy of proposed solution before finishing working in WG",
       "createdAt": "2023-09-20T01:16:46Z",
-      "updatedAt": "2023-09-28T19:24:00Z",
+      "updatedAt": "2023-10-06T15:26:06Z",
       "closedAt": null,
-      "comments": []
+      "comments": [
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "PR #77 is intended to address this issue.",
+          "createdAt": "2023-10-06T15:26:06Z",
+          "updatedAt": "2023-10-06T15:26:06Z"
+        }
+      ]
     },
     {
       "number": 69,
@@ -2258,24 +2290,26 @@
       "id": "PR_kwDOJdqgvc5bI1_B",
       "title": "Updates to protocol details",
       "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/71",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "bdetwiler",
       "authorAssociation": "OWNER",
       "assignees": [],
       "labels": [],
       "body": "* Add UUID values for Service and Characteristics\r\n* Add value for Service Data TLV\r\n* Add Product Name to the Product Data registry\r\n* Add Protocol Implementation Version to the list of non-owner commands\r\n* Update opcode values in protocol",
       "createdAt": "2023-09-25T15:25:23Z",
-      "updatedAt": "2023-09-25T15:25:24Z",
+      "updatedAt": "2023-10-05T22:48:25Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
       "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "headRefName": "protocol-updates",
       "headRefOid": "add7785e006bc29f13f25a006a1d5ade6b4d4f83",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "closedAt": "2023-10-05T22:48:25Z",
+      "mergedAt": "2023-10-05T22:48:25Z",
+      "mergedBy": "bdetwiler",
+      "mergeCommit": {
+        "oid": "b9bc8185b7fb7081a55e6aa88810c35da2700e3e"
+      },
       "comments": [],
       "reviews": []
     },
@@ -2293,13 +2327,13 @@
       ],
       "body": "Closes #47",
       "createdAt": "2023-09-28T19:23:49Z",
-      "updatedAt": "2023-09-28T19:53:10Z",
+      "updatedAt": "2023-10-06T22:43:02Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
       "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "headRefName": "zae-issue-1",
-      "headRefOid": "dc08965a70a71f1eb1c91c26974780c608909046",
+      "headRefOid": "cffdd950181c3ffff8aeb29e2db6a1c7c695d052",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
@@ -2396,7 +2430,7 @@
       ],
       "body": "Closes #70",
       "createdAt": "2023-09-28T19:49:36Z",
-      "updatedAt": "2023-09-28T19:49:36Z",
+      "updatedAt": "2023-10-06T22:42:43Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
@@ -2408,21 +2442,37 @@
       "mergedBy": null,
       "mergeCommit": null,
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5jHZTj",
+          "commit": {
+            "abbreviatedOid": "eef3969"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "state": "APPROVED",
+          "body": "",
+          "createdAt": "2023-10-06T22:42:43Z",
+          "updatedAt": "2023-10-06T22:42:43Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 74,
       "id": "PR_kwDOJdqgvc5bfw6T",
-      "title": "Update charter-detecting-unwanted-location-trackers.md",
+      "title": "Clarify use case of preventing people from being tracked",
       "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/74",
       "state": "OPEN",
       "author": "bledvina",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "Charter"
+      ],
       "body": "This PR attempts to address issue #52",
       "createdAt": "2023-09-29T02:09:42Z",
-      "updatedAt": "2023-09-29T02:09:42Z",
+      "updatedAt": "2023-10-07T09:10:59Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
@@ -2433,34 +2483,87 @@
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "bledvina",
+          "authorAssociation": "COLLABORATOR",
+          "body": "@ekr looks good to me. Wanna approve the PR and then we can merge?",
+          "createdAt": "2023-10-07T09:10:59Z",
+          "updatedAt": "2023-10-07T09:10:59Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5jGsuL",
+          "commit": {
+            "abbreviatedOid": "b1da992"
+          },
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "",
+          "createdAt": "2023-10-06T19:49:08Z",
+          "updatedAt": "2023-10-06T19:49:08Z",
+          "comments": [
+            {
+              "originalPosition": 5,
+              "body": "```suggestion\r\nThe goal of the DULT WG is to standardize a protocol for information exchange between location-tracking accessories and nearby devices, along with actions that these accessories and devices should take once unwanted tracking is detected. This protocol is intended to help protect people against being unknowingly tracked by allowing arbitrary devices to detect unwanted tracking by these accessories. The protocols and interactions between devices may be limited to certain states or modes, such as the accessory being separated from a paired/owner device.\r\n```\r\n\r\nI think this is closer to the sense.",
+              "createdAt": "2023-10-06T19:49:08Z",
+              "updatedAt": "2023-10-06T19:49:08Z"
+            }
+          ]
+        }
+      ]
     },
     {
       "number": 75,
       "id": "PR_kwDOJdqgvc5bsTO9",
-      "title": "Update charter-detecting-unwanted-location-trackers.md",
+      "title": "Physical disabling of trackers",
       "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/75",
       "state": "OPEN",
       "author": "bledvina",
       "authorAssociation": "COLLABORATOR",
       "assignees": [],
-      "labels": [],
+      "labels": [
+        "Charter"
+      ],
       "body": "Added a sentence to call out physically disabling a tracker being in scope of WG. This attempts to address issue #61",
       "createdAt": "2023-10-02T16:52:00Z",
-      "updatedAt": "2023-10-02T16:52:00Z",
+      "updatedAt": "2023-10-07T07:46:15Z",
       "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "baseRefName": "main",
       "baseRefOid": "164903fc8b7de9945739ce750f978007efbbf843",
       "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
       "headRefName": "bledvina-patch-2",
-      "headRefOid": "a75405ae39ff0c45dc3d48f59ef5ffdfda26d48e",
+      "headRefOid": "6e109793f908feff3fe7e6b6f34bc33c26bc057f",
       "closedAt": null,
       "mergedAt": null,
       "mergedBy": null,
       "mergeCommit": null,
-      "comments": [],
-      "reviews": []
+      "comments": [
+        {
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "body": "Agree with ekr that this is unclear. Obviously the charter won't tell the WG to specify how particular devices will be disabled. I could see a couple directions for scope:\r\n- The charter asks the WG to add considerations around the mitigations a person who detects an unwanted tracker can take (which may include turning it off)\r\n- The charter asks the WG to make sure the protocol has a way to give people info and instructions about how to mitigate the tracking",
+          "createdAt": "2023-10-06T22:39:33Z",
+          "updatedAt": "2023-10-06T22:39:33Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5jGsYP",
+          "commit": {
+            "abbreviatedOid": "a75405a"
+          },
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "COMMENTED",
+          "body": "I don't think I understand what this is trying to say.\r\n\r\nSurely this isn't going to tell me what gesture I need to use to disable an AirTag, for instance.",
+          "createdAt": "2023-10-06T19:48:00Z",
+          "updatedAt": "2023-10-06T19:48:00Z",
+          "comments": []
+        }
+      ]
     },
     {
       "number": 76,
@@ -2487,6 +2590,83 @@
       "mergeCommit": null,
       "comments": [],
       "reviews": []
+    },
+    {
+      "number": 77,
+      "id": "PR_kwDOJdqgvc5cH4DJ",
+      "title": "Require analysis of solution",
+      "url": "https://github.com/bdetwiler/draft-detecting-unwanted-location-trackers/pull/77",
+      "state": "OPEN",
+      "author": "bledvina",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [
+        "Charter"
+      ],
+      "body": "This change is intended to address issue #68",
+      "createdAt": "2023-10-06T15:24:49Z",
+      "updatedAt": "2023-10-07T07:40:15Z",
+      "baseRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "baseRefName": "main",
+      "baseRefOid": "b9bc8185b7fb7081a55e6aa88810c35da2700e3e",
+      "headRepository": "bdetwiler/draft-detecting-unwanted-location-trackers",
+      "headRefName": "bledvina-patch-3",
+      "headRefOid": "560c721e5fd0f83889c0970a6f23978003c9915f",
+      "closedAt": null,
+      "mergedAt": null,
+      "mergedBy": null,
+      "mergeCommit": null,
+      "comments": [
+        {
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "body": "As a note, it would be great to have PR titles that were more clear.",
+          "createdAt": "2023-10-06T19:44:51Z",
+          "updatedAt": "2023-10-06T19:44:51Z"
+        }
+      ],
+      "reviews": [
+        {
+          "id": "PRR_kwDOJdqgvc5jGrw4",
+          "commit": {
+            "abbreviatedOid": "e33d95b"
+          },
+          "author": "ekr",
+          "authorAssociation": "CONTRIBUTOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2023-10-06T19:45:48Z",
+          "updatedAt": "2023-10-06T19:46:11Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "What would this evidence potentially consist of?",
+              "createdAt": "2023-10-06T19:45:48Z",
+              "updatedAt": "2023-10-06T19:46:11Z"
+            }
+          ]
+        },
+        {
+          "id": "PRR_kwDOJdqgvc5jHZKV",
+          "commit": {
+            "abbreviatedOid": "e33d95b"
+          },
+          "author": "tfpauly",
+          "authorAssociation": "COLLABORATOR",
+          "state": "CHANGES_REQUESTED",
+          "body": "",
+          "createdAt": "2023-10-06T22:41:35Z",
+          "updatedAt": "2023-10-06T22:41:39Z",
+          "comments": [
+            {
+              "originalPosition": 4,
+              "body": "I think this doesn't belong as its own milestone. Instead, you'd want to say somewhere that the standards document needs to include a good threat analysis and security analysis before publishing.",
+              "createdAt": "2023-10-06T22:41:35Z",
+              "updatedAt": "2023-10-06T22:41:39Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
